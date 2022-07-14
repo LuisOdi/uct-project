@@ -113,6 +113,7 @@ public class EnrollmentController {
 	public String saveSelectSection(Model model, Enrollment enrollment, Section section, Course course, Student student,
 			SessionStatus status, RedirectAttributes redirectAttrs) {
 		try {
+			
 			enrollment.setNumberCycle("2022-01");
 			int vacancies = enrollment.getSection().getVacancies();
 			int newvacancies = vacancies - 1;
@@ -134,19 +135,19 @@ public class EnrollmentController {
 			 * "Ta bien").addFlashAttribute("clase", "sucess"); }
 			 */
 			if (rpta >= 1) {
-				redirectAttrs.addFlashAttribute("mensaje", "Elimine una seccion para seleccionar otra")
+				redirectAttrs.addFlashAttribute("mensaje", "¡Ya se encuentra matriculado en este curso! Elimine la sección y vuelva a intentarlo")
 						.addFlashAttribute("clase", "danger");
 			} else if (rpta <= 1 && rpta2 > 0) {
-				redirectAttrs.addFlashAttribute("mensaje", "Se guardo correctamente").addFlashAttribute("clase",
+				redirectAttrs.addFlashAttribute("mensaje", "Matriculado correctamente").addFlashAttribute("clase",
 						"sucess");
 			}
 
 			if (rpta <= 1 && rpta2 <= 0) {
-				redirectAttrs.addFlashAttribute("mensaje", "No hay vacantes, seleccione otra seccion")
+				redirectAttrs.addFlashAttribute("mensaje", "Ya no quedan vacantes disponibles en esta sección. Elija otra sección por favor.")
 						.addFlashAttribute("clase", "warning");
 			}
 			if (rpta <= 1 && rpta2 > 0 && rpta3 < 0) {
-				redirectAttrs.addFlashAttribute("mensaje", "Creditos insuficientes").addFlashAttribute("clase",
+				redirectAttrs.addFlashAttribute("mensaje", "Ya no te quedan créditos suficientes para este curso.").addFlashAttribute("clase",
 						"warning");
 			}
 			/*
@@ -196,7 +197,7 @@ public class EnrollmentController {
 				enrollmentService.deleteById(id);
 				
 				
-				redirectAttrs.addFlashAttribute("mensaje", "Se elimino correctamente").addFlashAttribute("clase",
+				redirectAttrs.addFlashAttribute("mensaje", "Te desmatriculaste de esta sección de manera exitosa.").addFlashAttribute("clase",
 						"success");
 				/*
 				 * if (enrollment.getStudent().getId() == student.getId()) { int creditAmount =

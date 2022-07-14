@@ -9,22 +9,26 @@
 	<header th:replace="layout/layout :: frag-header"></header>
 	<div th:replace="/layout/layout :: frag-sidebar"></div>
 	<section>
+		<div class="ms-2 me-auto col mt-2 mb-2 d-flex justify-content-center">
+			<div class="fw-bold fs-2">MATRICULA: 2022 - 01</div>
+		</div>
 		<div class="card">
-			<div class="card-body row">
+			<div class="card-body row text-center">
 				<div class="ms-2 me-auto col mt-2 mb-2">
 					<div class="fw-bold">Nombres y Apellidos:</div>
 					<p th:text="${student.firstName + ' ' + student.lastName}"></p>
-					<div class="fw-bold">Ciclo:</div>
-					<p th:text="${student.cycle}"></p>
 				</div>
-				<div class="ms-2 me-auto col mt-2 mb-2">
+				<div class="col">
 					<div class="fw-bold">Carrera:</div>
 					<p th:text="${student.career.name}"></p>
-					<div class="fw-bold">Creditos Maximos:</div>
+				</div>
+				<div class="col">
+					<div class="fw-bold">Creditos Disponibles:</div>
 					<p th:text="${student.creditAmount}"></p>
 				</div>
-				<div class="ms-2 me-auto col mt-2 mb-2 text-end">
-					<div class="fw-bold fs-2">MATRICULA: 2022 - 01</div>
+				<div class="col">
+					<div class="fw-bold">Ciclo:</div>
+					<p th:text="${student.cycle}"></p>
 				</div>
 			</div>
 		</div>
@@ -32,9 +36,8 @@
 
 	<div class="alert alert-success alert-dismissible fade show"
 		th:classappend="'alert-' + (${clase != null} ? ${clase} : info)"
-		th:if="${mensaje != null}" th:text="${mensaje}">
-	</div>
-	
+		th:if="${mensaje != null}" th:text="${mensaje}"></div>
+
 	<section class="container">
 		<div>
 			<div class="col card text-center ms-5 me-5 mb-3 mt-5">
@@ -42,7 +45,7 @@
 					de Cursos</div>
 				<div class="card-body">
 					<table class="table table-bordered">
-						<thead style="background: #1D3A85; color:white">
+						<thead style="background: #1D3A85; color: white">
 							<tr>
 								<th scope="col">Ciclo</th>
 								<th scope="col">Creditos</th>
@@ -66,18 +69,18 @@
 			</div>
 
 			<div class="col card text-center ms-5 me-5 mb-3 mt-5">
-				<div class="card-header text-start" style="background-color: white">Cursos
+				<div class="card-header text-start" style="background-color: white">Tus Cursos
 					Matriculados</div>
 				<div class="card-body">
 
 					<table class="table table-striped">
-						<thead style="background: #1D3A85; color:white">
+						<thead style="background: #1D3A85; color: white">
 							<tr>
 								<th scope="col">Curso</th>
 								<th scope="col">Creditos</th>
 								<th scope="col">Seccion</th>
 								<th scope="col">Dia</th>
-								<th scope="col" colspan="3">Hora</th>
+								<th scope="col" colspan="3">Horario elegido</th>
 								<th scope="col"></th>
 							</tr>
 						</thead>

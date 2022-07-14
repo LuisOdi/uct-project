@@ -23,49 +23,49 @@ import javax.validation.constraints.Size;
 public class Student {
 	@Id
 	@NotEmpty(message = "Debe ingresar un ID")
-	@Size(min = 1,max = 12, message = "El valor debe estar entre 1 y 12 caracteres")
+	@Size(min = 1,max = 12, message = "El dato debe estar entre 1 y 12 dígitos")
 	@Column(name = "student_id", length = 12, nullable = false)
 	private String id;
 	
-	@Size(min = 1,max = 50, message = "El valor debe estar entre 1 y 50 caracteres")
+	@Size(min = 1,max = 50, message = "No puede superar los 50 dígitos")
 	@Column(name = "last_name", length = 50, nullable = false)
 	private String lastName;
 	
-	@Size(min = 1,max = 50, message = "El valor debe estar entre 1 y 50 caracteres")
+	@Size(min = 1,max = 50, message = "No puede superar los 50 dígitos")
 	@Column(name = "first_name", length = 50, nullable = false)	
 	private String firstName;
 	
-	@Min(value = 1, message = "El valor debe ser mayor a 1")
-	@Max(value = 90, message = "El valor debe menor a 90")
+	@Min(value = 1, message = "No puede ser 1")
+	@Max(value = 90, message = "Este valor es erróneo. Intente nuevamente")
 	@Column(name = "age")
 	private Integer age;
 	
-	@Min(value = 10000000, message = "El valor debe tener 8 digitos")
-	@Max(value = 99999999, message = "El valor debe tener 8 digitos")
+	@Min(value = 10000000, message = "Debe tener 8 digitos")
+	@Max(value = 99999999, message = "Debe tener 8 digitos")
 	@Column(name = "dni")	
 	private Integer dni;
 	
-	@Min(value = 1, message = "El valor debe ser mayor a 1")
-	@Max(value = 10, message = "El valor debe menor a 10")
+	@Min(value = 1, message = "No puede ser menor a 1")
+	@Max(value = 10, message = "No puede superar el valor de 10")
 	@Column(name = "cycle")
 	private Integer cycle;
 	
 	//@Column(name = "phone_number",columnDefinition = ("NUMERIC(9)"), nullable = false)
-	@Min(value = 100000000, message = "El valor debe tener 9 digitos")
-	@Max(value = 999999999, message = "El valor debe tener 9 digitos")
+	@Min(value = 100000000, message = "Debe tener 9 digitos")
+	@Max(value = 999999999, message = "Debe tener 9 digitos")
 	@Column(name = "phone_number")
 	private Integer phoneNumber;
 	
-	@Size(min = 1,max = 70, message = "El valor debe estar entre 1 y 70 caracteres")
+	@Size(min = 1,max = 70, message = "No puede superar los 70 caracteres")
 	@Column(name = "email_university", length = 70)	
 	private String emailUniversity;
 	
-	@Size(min = 1,max = 70, message = "El valor debe estar entre 1 y 70 caracteres")
+	@Size(min = 1,max = 70, message = "No puede superar los 70 caracteres")
 	@Column(name = "email_personal", length = 70)	
 	private String emailPersonal;
 
-	@Min(value = 1, message = "El valor debe ser mayor a 1")
-	@Max(value = 28, message = "El valor debe menor a 28")
+	@Min(value = 1, message = "El valor tiene que ser mayor a 1")
+	@Max(value = 28, message = "El alumno cuenta con máximo 28 créditos")
 	@Column(name = "credit_amount")	
 	private Integer creditAmount;
 	

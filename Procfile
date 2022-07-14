@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/uct-project-0.0.1-SNAPSHOT.jar
