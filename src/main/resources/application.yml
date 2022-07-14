@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/uctDB
-    username: postgres
-    password: 0Tf#5Bgs
+    url: jdbc:postgresql://ec2-44-206-11-200.compute-1.amazonaws.com:5432/d1lvhdlu2d4sv3
+    username: oukmtaqpinaijw
+    password: c00051ece20ea92695163d21d7b1ff7276b455ea36af7971bb14729cebbc38b2
   jpa:
     database: postgresql
     hibernate:
